@@ -1,0 +1,60 @@
+#  describe  Compose  File version information 
+version: "3"
+
+#  Defining services , Can be more 
+services:
+  node1: #  The service name 
+    image: redis #  The image required to create the container 
+    container_name: redis-node1 #  Container name 
+    restart: always #  The container always restarts 
+    network_mode: "host" # host  Network mode 
+    volumes: #  Data volume , Directory mount 
+      - ./node1/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node1/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf #  Override commands that are executed by default after the container is started 
+
+  node2:
+    image: redis
+    container_name: redis-node2
+    network_mode: "host"
+    volumes:
+      - ./node2/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node2/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  node3:
+    image: redis
+    container_name: redis-node3
+    network_mode: "host"
+    volumes:
+      - ./node3/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node3/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  node4:
+    image: redis
+    container_name: redis-node4
+    network_mode: "host"
+    volumes:
+      - ./node4/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node4/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  node5:
+    image: redis
+    container_name: redis-node5
+    network_mode: "host"
+    volumes:
+      - ./node5/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node5/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  node6:
+    image: redis
+    container_name: redis-node6
+    network_mode: "host"
+    volumes:
+      - ./node6/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./node6/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+  
